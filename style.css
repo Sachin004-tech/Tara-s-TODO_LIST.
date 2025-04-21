@@ -1,0 +1,287 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  /* background: linear-gradient(to right, #e3f2fd, #fce4ec); */
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 33%, #33989b 60%, #4e72c2 73%,#73ccc5 86%);
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navbar */
+nav {
+  height: 60px;
+  background-color: #8B5DFF;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Layout */
+.main-container {
+  display: flex;
+  height: calc(100% - 60px);
+  padding: 20px;
+}
+
+/* Sidebars */
+#left-sidebar,
+#right-sidebar {
+  width: 300px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+}
+
+#left-sidebar {
+  border-right: 1px solid #ccc;
+}
+
+#right-sidebar {
+  border-left: 1px solid #ccc;
+}
+
+/* Sidebar Task Cards */
+.sidebar-task {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.sidebar-task:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-5px);
+}
+
+/* .task-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+} */
+
+/* .task-buttons button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+} */
+
+.task-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 12px;
+}
+
+.task-buttons button {
+  width: 36px;
+  height: 36px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.task-buttons button:hover {
+  transform: scale(1.15);
+}
+
+
+
+.task-buttons .complete {
+  background: #cbf078;
+  color: white;
+}
+
+.task-buttons .update {
+  background: #f1b963;
+  color: black;
+}
+
+.task-buttons .delete {
+  background: #9cd3d3;
+  color: white;
+}
+
+/* .task-buttons button:hover {
+  transform: scale(1.05);
+} */
+
+/* Completed Task Cards */
+.completed-task {
+  background: #d4edda;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.completed-task:hover {
+  background-color: #c8e6c9;
+  transform: scale(1.02);
+}
+
+/* To-Do Form */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #00000015;
+  width: 650px;
+  height: 400px;
+}
+
+.todo-form input,
+.todo-form textarea,
+.todo-form select {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.todo-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* DateTime */
+.datetime-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+body.dark-mode .todo-form,
+body.dark-mode #left-sidebar,
+body.dark-mode #right-sidebar {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark-mode .sidebar-task {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .completed-task {
+  background-color: #2e7d32;
+  color: white;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .todo-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+  }
+
+  #left-sidebar,
+  #right-sidebar {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  main {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .todo-form {
+    width: 100%;
+    height: auto;
+  }
+
+  .datetime-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
+  }
+
+  #themeToggle {
+    font-size: 1rem;
+  }
+
+  .todo-form input,
+  .todo-form textarea,
+  .todo-form select,
+  .todo-form button {
+    font-size: 14px;
+  }
+
+  .task-buttons button {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .task-buttons lord-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+

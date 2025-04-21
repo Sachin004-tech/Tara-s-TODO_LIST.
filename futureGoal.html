@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🚀 Future Goals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #d3cce3, #e9e4f0);
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .timeline {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .milestone {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .milestone:hover {
+      transform: translateY(-5px);
+    }
+
+    .milestone h3 {
+      color: #4CAF50;
+    }
+
+    .skills {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill span {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .progress {
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 16px;
+      background-color: #4CAF50;
+      width: 0;
+      transition: width 1s ease;
+    }
+
+    .countdown {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 1.2rem;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index.html" style="
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-weight: bold;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        ">
+          🔙 Back to Main Page
+        </a>
+      </div>
+      
+    <h1>🚀 My Future Goals</h1>
+    <div class="quote">"The future depends on what you do today." — Mahatma Gandhi</div>
+  </header>
+
+  <div class="timeline">
+    <div class="milestone">
+      <h3>🎓 Connect database</h3>
+      <!-- <p>Become confident in both frontend and backend technologies using MERN or Python stack.</p> -->
+      <p>In future updates, I plan to integrate a database (like <strong>MySQL</strong> or <strong>MongoDB</strong>) to:</p>
+    </div>
+    <div class="milestone">
+      <h3>🤝 Collaboration & Sharing</h3>
+      <!-- <p>Get placed at companies like TCS, Wipro, or Accenture as a Full Stack Developer.</p> -->
+      <p>In the future, this app will support:</p>
+    </div>
+    <div class="milestone">
+      <h3>🎙️ Voice Input & Smart Assistant</h3>
+      <!-- <p>Actively participate in GitHub projects and build a strong developer profile.</p> -->
+      <p>In future updates, you'll be able to:</p>
+    </div>
+    <div class="milestone">
+      <h3>🔐 User Authentication</h3>
+      <!-- <p>Create a real-world solution that helps people and becomes a revenue-generating product.</p> -->
+      <p>To ensure a secure and personalized experience, we plan to add:</p>
+    </div>
+  </div>
+
+  <div class="skills">
+    <h2 style="text-align:center;">📈 Skill Progress</h2>
+    <div class="skill">
+      <span>HTML</span>
+      <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>CSS</span>
+      <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>Python</span>
+      <div class="progress"><div class="progress-bar" style="width: 70%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>React</span>
+      <div class="progress"><div class="progress-bar" style="width: 60%;"></div></div>
+    </div>
+  </div>
+
+  <div class="countdown" id="countdownBox">
+    ⏳ Loading countdown...
+  </div>
+
+  <script>
+    // Dynamic countdown to a specific date
+    const futureDate = new Date("2025-12-31T23:59:59").getTime();
+    const countdownBox = document.getElementById("countdownBox");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = futureDate - now;
+
+      if (distance < 0) {
+        countdownBox.innerHTML = "🎉 Goal date reached!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      countdownBox.innerHTML = `⏳ Days left to achieve your 2025 goal: <strong>${days} days</strong>`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
